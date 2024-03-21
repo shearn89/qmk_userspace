@@ -18,7 +18,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	lastMode = RGB_MATRIX_HUE_PENDULUM;
 	hsv = rgb_matrix_get_hsv();
 
+#ifdef AUTO_SHIFT_ENABLE
       	autoshift_disable();
+#endif
 	set_single_persistent_default_layer(_QWERTY);
       }
       return false;
@@ -32,7 +34,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	lastMode = RGB_MATRIX_HUE_PENDULUM;
 	hsv = rgb_matrix_get_hsv();
 
+#ifdef AUTO_SHIFT_ENABLE
       	autoshift_enable();
+#endif
 	set_single_persistent_default_layer(_CLMAKDH);
       }
       return false;
@@ -46,7 +50,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	lastMode = RGB_MATRIX_BREATHING;
 	hsv = rgb_matrix_get_hsv();
 
+#ifdef AUTO_SHIFT_ENABLE
       	autoshift_disable();
+#endif
 	set_single_persistent_default_layer(_FN2_LAYER);
       }
       return false;
