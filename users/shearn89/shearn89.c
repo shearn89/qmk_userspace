@@ -8,22 +8,6 @@ int brightness = 125;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-	rgb_matrix_sethsv(170, 255, brightness);
-	rgb_matrix_set_speed(127);
-	rgb_matrix_mode(RGB_MATRIX_HUE_PENDULUM);
-
-	lastSpeed = 127;
-	lastMode = RGB_MATRIX_HUE_PENDULUM;
-	hsv = rgb_matrix_get_hsv();
-
-#ifdef AUTO_SHIFT_ENABLE
-      	autoshift_disable();
-#endif
-	set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
     case CLMAKDH:
       if (record->event.pressed) {
 	rgb_matrix_sethsv(10, 200, brightness);
@@ -35,25 +19,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	hsv = rgb_matrix_get_hsv();
 
 #ifdef AUTO_SHIFT_ENABLE
-      	autoshift_enable();
+    autoshift_enable();
 #endif
 	set_single_persistent_default_layer(_CLMAKDH);
-      }
-      return false;
-    case FN2_LAYER:
-      if (record->event.pressed) {
-        rgb_matrix_sethsv(0, 255, brightness); // red
-        rgb_matrix_set_speed(127);
-        rgb_matrix_mode(RGB_MATRIX_BREATHING);
-
-	lastSpeed = 127;
-	lastMode = RGB_MATRIX_BREATHING;
-	hsv = rgb_matrix_get_hsv();
-
-#ifdef AUTO_SHIFT_ENABLE
-      	autoshift_disable();
-#endif
-	set_single_persistent_default_layer(_FN2_LAYER);
       }
       return false;
     default:
