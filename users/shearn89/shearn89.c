@@ -35,7 +35,12 @@ __attribute__((weak)) void matrix_init_user(void) { }
 __attribute__((weak)) void matrix_scan_user(void) { }
 
 __attribute__((weak)) void keyboard_post_init_user(void) {
-  lastMode = rgb_matrix_get_mode();
+  rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_PENDULUM);
+  rgb_matrix_set_speed(50);
+  rgb_matrix_sethsv_noeeprom(10, 200, brightness);
+
+  lastMode = RGB_MATRIX_HUE_PENDULUM;
+  lastSpeed = 50;
   hsv = rgb_matrix_get_hsv();
 }
 
