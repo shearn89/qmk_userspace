@@ -1,6 +1,8 @@
 #pragma once
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define TAPPING_TERM 180
+#define RETRO_TAPPING
 
 #ifndef NO_DEBUG
 #define NO_DEBUG

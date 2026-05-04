@@ -5,8 +5,8 @@ sudo whoami
 
 qmk compile -kb dztech/dz60rgb_ansi/v2_1 -km shearn89
 echo "compiled, please replug the board in firmware loading mode! (hold esc)"
-echo "You have 30 seconds to comply."
-sleep 30
+echo "You have 15 seconds to comply."
+sleep 15
 echo "Continuing!"
 
 echo "Transferring firmware"
